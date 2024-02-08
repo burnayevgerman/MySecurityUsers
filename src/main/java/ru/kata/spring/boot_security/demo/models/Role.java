@@ -27,9 +27,6 @@ public class Role implements GrantedAuthority {
     @Column(name = "is_required")
     private boolean isRequired;
 
-    @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
-    private Set<User> users = new HashSet<>();
-
     public Role(String name, String viewText, boolean isRequired) {
         this.name = name;
         this.viewText = viewText;

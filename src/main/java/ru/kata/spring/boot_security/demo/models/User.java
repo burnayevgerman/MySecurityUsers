@@ -35,7 +35,7 @@ public class User implements UserDetails {
     @Column(name = "date_of_birth")
     private Date dateOfBirth;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(
         name = "users_roles",
         joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
